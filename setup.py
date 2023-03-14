@@ -15,7 +15,7 @@ setup(
         "for telegram bots using templates described in json."
     ),
     py_modules=["messages"],
-    package_dir={'': 'src'},
+    package_dir={'': 'messages'},
     author='Oleg Bervinov',
     author_email='obervinov@pm.me',
     long_description=(f"{readme_content}""\n\n"f"{changelog_content}"),
