@@ -15,7 +15,7 @@ This package helps to easily and quickly generate beautiful messages for telegra
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/github-actions.png" width="25" title="github-actions"> GitHub Actions
 | Name  | Version |
 | ------------------------ | ----------- |
-| GitHub Actions Templates | [v1.0.1](https://github.com/obervinov/_templates/tree/v1.0.1) |
+| GitHub Actions Templates | [v1.0.2](https://github.com/obervinov/_templates/tree/v1.0.2) |
 
 
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/requirements.png" width="25" title="functions"> Supported functions
