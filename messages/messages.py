@@ -27,7 +27,7 @@ class Messages:
         """
         self.config_path = config_path
         with open(self.config_path, 'r', encoding='UTF-8') as config_json:
-            self.data = json.loads(config_json)
+            self.data = json.load(config_json)
         config_json.close()
 
 
@@ -79,10 +79,8 @@ class Messages:
         :default current_count: 0
         """
         procentage = math.ceil((current_count / total_count) * 100)
-        progressbar_response = (
-            '\r[',
-            '\u25FE' * int(procentage),
-            '\u25AB' * int((100 - procentage)),
-            f']{str(procentage)}%'
+        progressbar = (
+            f"\r[{emoji.emojize(':black_medium-small_square:') * int(procentage)}"
+            f"{emoji.emojize(':white_medium_square:') * int((100 - procentage))}]{str(procentage)}%"
         )
-        return progressbar_response
+        return progressbar
