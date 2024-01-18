@@ -1,0 +1,12 @@
+name: Create release
+
+on:
+  workflow_run:
+    workflows: ["Tests and Checks"]
+    branches: [main]
+    types: 
+      - completed
+
+jobs:
+  create-release:
+    uses: obervinov/_templates/.github/workflows/release.yaml@v1.0.12

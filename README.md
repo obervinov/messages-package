@@ -1,7 +1,7 @@
 # Messages Package
-[![Release](https://github.com/obervinov/messages-package/actions/workflows/release.yml/badge.svg)](https://github.com/obervinov/messages-package/actions/workflows/release.yml)
+[![Release](https://github.com/obervinov/messages-package/actions/workflows/release.yaml/badge.svg)](https://github.com/obervinov/messages-package/actions/workflows/release.yaml)
 [![CodeQL](https://github.com/obervinov/messages-package/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/obervinov/messages-package/actions/workflows/github-code-scanning/codeql)
-[![Tests and checks](https://github.com/obervinov/messages-package/actions/workflows/tests.yml/badge.svg?branch=main&event=pull_request)](https://github.com/obervinov/messages-package/actions/workflows/tests.yml)
+[![Tests and checks](https://github.com/obervinov/messages-package/actions/workflows/tests.yaml/badge.svg?branch=main&event=pull_request)](https://github.com/obervinov/messages-package/actions/workflows/tests.yaml)
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/obervinov/messages-package?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/obervinov/messages-package?style=for-the-badge)
@@ -23,14 +23,23 @@ This package helps to easily and quickly generate beautiful messages for telegra
 - Rendering a line with emoji
 - Rendering a simple string
 
-## <img src="https://github.com/obervinov/_templates/blob/main/icons/stack2.png" width="20" title="install"> Installing
+## <img src="https://github.com/obervinov/_templates/blob/main/icons/stack2.png" width="20" title="install"> Installing with Poetry
 ```bash
-# Install current version
-pip3 install git+https://github.com/obervinov/messages-package.git#egg=vault
-# Install version by branch
-pip3 install git+https://github.com/obervinov/messages-package.git@main#egg=vault
-# Install version by tag
-pip3 install git+https://github.com/obervinov/messages-package.git@v1.0.0#egg=vault
+tee -a pyproject.toml <<EOF
+[tool.poetry]
+name = myproject"
+version = "1.0.0"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v1.0.1" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+EOF
+
+poetry install
 ```
 
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/config.png" width="25" title="usage"> Usage example
