@@ -12,8 +12,6 @@ jobs:
     uses: obervinov/_templates/.github/workflows/changelog.yaml@release/v1.0.12
   pylint:
     uses: obervinov/_templates/.github/workflows/pylint.yaml@release/v1.0.12
-  flake8:
-    uses: obervinov/_templates/.github/workflows/flake8.yaml@release/v1.0.12
   pytest:
     uses: obervinov/_templates/.github/workflows/pytest.yaml@release/v1.0.12
   pyproject:
