@@ -23,6 +23,12 @@ This package helps to easily and quickly generate beautiful messages for telegra
 - Rendering a line with emoji
 - Rendering a simple string
 
+## <img src="https://github.com/obervinov/_templates/blob/v1.0.5/icons/build.png" width="25" title="build"> Environment variables
+| Variable  | Description | Default value |
+| ------------- | ------------- | ------------- |
+| `MESSAGES_CONFIG` | Json file with templates for rendering messages. (Example)[tests/configs/messages.json] | `configs/messages.json` |
+
+
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/stack2.png" width="20" title="install"> Installing with Poetry
 ```bash
 tee -a pyproject.toml <<EOF
