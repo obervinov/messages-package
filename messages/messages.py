@@ -30,12 +30,11 @@ class Messages:
             self.data = json.load(config_json)
         config_json.close()
 
-
     def render_template(
         self,
         template_alias: str = None,
         **kwargs
-    ) -> str:
+    ) -> str | None:
         """
         Method for reading the text from the configuration file.
 
@@ -59,7 +58,6 @@ class Messages:
             return template['text'].format(*arguments)
         except KeyError:
             return None
-
 
     def render_progressbar(
         self,
