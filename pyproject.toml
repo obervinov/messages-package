@@ -18,7 +18,7 @@ include = ["CHANGELOG.md"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
-emoji  = "^2.2.0"
+emoji  = "^2.10.0"
 
 [build-system]
 requires = ["poetry-core"]
