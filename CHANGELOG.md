@@ -3,17 +3,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## v1.0.1 - 2024-01-18
+## v1.0.1 - 2024-01-19
 ### What's Changed
 **full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.0...v1.0.1 by @ obervinov https://github.com/obervinov/messages-package/pull/17
 #### 🐛 Bug Fixes
-* 
+* (Update Test)[https://github.com/obervinov/messages-package/issues/6]
+* (Update GitHub Actions workflow)[https://github.com/obervinov/messages-package/issues/7]
 #### 📚 Documentation
 * (Update PR template)[https://github.com/obervinov/messages-package/issues/10]
+* (Update README.md)[https://github.com/obervinov/messages-package/issues/4]
 #### 💥 Breaking Changes
 * (Migration from pip to poetry)[https://github.com/obervinov/messages-package/issues/3]
 #### 🚀 Features
-* 
+* (Update GitHub Actions workflow)[https://github.com/obervinov/messages-package/issues/7]
+* (Add support for the environment variable `MESSAGES_CONFIG`)[https://github.com/obervinov/messages-package/issues/15]
 
 
 ## v1.0.0 - 2023-03-15
