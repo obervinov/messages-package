@@ -1,7 +1,7 @@
 # Messages Package
-[![Release](https://github.com/obervinov/messages-package/actions/workflows/release.yml/badge.svg)](https://github.com/obervinov/messages-package/actions/workflows/release.yml)
+[![Release](https://github.com/obervinov/messages-package/actions/workflows/release.yaml/badge.svg)](https://github.com/obervinov/messages-package/actions/workflows/release.yaml)
 [![CodeQL](https://github.com/obervinov/messages-package/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/obervinov/messages-package/actions/workflows/github-code-scanning/codeql)
-[![Tests and checks](https://github.com/obervinov/messages-package/actions/workflows/tests.yml/badge.svg?branch=main&event=pull_request)](https://github.com/obervinov/messages-package/actions/workflows/tests.yml)
+[![PR](https://github.com/obervinov/messages-package/actions/workflows/pr.yaml/badge.svg?branch=main&event=pull_request)](https://github.com/obervinov/messages-package/actions/workflows/pr.yaml)
 
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/obervinov/messages-package?style=for-the-badge)
 ![GitHub last commit](https://img.shields.io/github/last-commit/obervinov/messages-package?style=for-the-badge)
@@ -15,7 +15,7 @@ This package helps to easily and quickly generate beautiful messages for telegra
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/github-actions.png" width="25" title="github-actions"> GitHub Actions
 | Name  | Version |
 | ------------------------ | ----------- |
-| GitHub Actions Templates | [v1.0.2](https://github.com/obervinov/_templates/tree/v1.0.2) |
+| GitHub Actions Templates | [v1.0.12](https://github.com/obervinov/_templates/tree/v1.0.12) |
 
 
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/requirements.png" width="25" title="functions"> Supported functions
@@ -23,27 +23,43 @@ This package helps to easily and quickly generate beautiful messages for telegra
 - Rendering a line with emoji
 - Rendering a simple string
 
-## <img src="https://github.com/obervinov/_templates/blob/main/icons/stack2.png" width="20" title="install"> Installing
+## <img src="https://github.com/obervinov/_templates/blob/v1.0.5/icons/build.png" width="25" title="build"> Environment variables
+| Variable  | Description | Default value |
+| ------------- | ------------- | ------------- |
+| `MESSAGES_CONFIG` | Json file with templates for rendering messages. (Example)[tests/configs/messages.json] | `configs/messages.json` |
+
+
+## <img src="https://github.com/obervinov/_templates/blob/main/icons/stack2.png" width="20" title="install"> Installing with Poetry
 ```bash
-# Install current version
-pip3 install git+https://github.com/obervinov/messages-package.git#egg=vault
-# Install version by branch
-pip3 install git+https://github.com/obervinov/messages-package.git@main#egg=vault
-# Install version by tag
-pip3 install git+https://github.com/obervinov/messages-package.git@v1.0.0#egg=vault
+tee -a pyproject.toml <<EOF
+[tool.poetry]
+name = myproject"
+version = "1.0.0"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v1.0.1" }
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+EOF
+
+poetry install
 ```
 
-## <img src="https://github.com/obervinov/_templates/blob/main/icons/config.png" width="25" title="usage"> Usage example
+## <img src="https://github.com/obervinov/_templates/blob/main/icons/config.png" width="25" title="usage"> Usage examples
+### Simple message with emoji
 1. Creating _configs/messages.json_ and adding an example template
    - all emojis should be wrapped in `:`
    - all variables must be specified in the same form as in your code
 ```json
-{ "templates":{"hello_message": {"text": "Hi, <b>{0}</b>! {1}\nAccess for your account - allowed {2}", "args": ["username", ":raised_hand:", ":unlocked:"]}}}
+{ "templates": {"hello_message": {"text": "Hi, <b>{0}</b>! {1}\nAccess for your account - allowed {2}", "args": ["username", ":raised_hand:", ":unlocked:"]}}}
 ```
 
 ```python
 # Import module
-import messages
+from messages import Messages
 
 # Create instance
 messages = Messages()
@@ -51,7 +67,7 @@ messages = Messages()
 # Rendering and getting messages
 print(
     messages.render_template(
-        'hello_message',
+        template_alias='hello_message',
         username="obervinov"
     )
 )
@@ -63,3 +79,31 @@ Hi, <b>obervinov</b>! ✋
 Access for your account - allowed 🔓
 ```
 
+### Simple message with progress bar
+1. Creating _configs/messages.json_ and adding an example template
+   - all emojis should be wrapped in `:`
+   - all variables must be specified in the same form as in your code
+```json
+{"templates": {"progressbar_message": {"text": "{0} Messages from the queue have already been processed", "args": [":framed_picture:", "progressbar"]}}
+```
+
+```python
+# Import module
+from messages import Messages
+
+# Create instance
+messages = Messages()
+
+# Rendering and getting messages
+print(
+    messages.render_progressbar(
+        total_count=100,
+        current_count=19
+    )
+)
+```
+
+_output result_
+```python
+[◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️]19%🔓
+```

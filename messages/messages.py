@@ -2,6 +2,7 @@
 This module contains classes and methods
 for assembling and sending telegram messages to the bot.
 """
+import os
 import json
 import math
 import re
@@ -16,34 +17,54 @@ class Messages:
 
     def __init__(
         self,
-        config_path: str = 'configs/messages.json'
+        config_path: str = None
     ) -> None:
         """
         Method for create a new messages instance.
 
-        :param config: The path as a file containing a dictionary with message templates.
-        :type config: str
-        :default config: configs/messages.json
+        Args:
+            config (str): the path as a file containing a dictionary with message templates.
+
+        Returns:
+            None
+
+        Examples:
+            >>> from messages import Messages
+            >>> messages = Messages('configs/messages.json')
         """
-        self.config_path = config_path
+        if os.environ.get("MESSAGES_CONFIG", None) is not None:
+            self.config_path = os.environ.get("MESSAGES_CONFIG", None)
+        elif config_path:
+            self.config_path = config_path
+        else:
+            self.config_path = 'configs/messages.json'
+
         with open(self.config_path, 'r', encoding='UTF-8') as config_json:
             self.data = json.load(config_json)
         config_json.close()
-
 
     def render_template(
         self,
         template_alias: str = None,
         **kwargs
-    ) -> str:
+    ) -> str | None:
         """
         Method for reading the text from the configuration file.
 
-        :param template_alias: The name of the template key for extracting text from conifg.
-        :type template_alias: str
-        :default template_alias: None
-        :param **kwargs: Passing additional parameters for message assembly.
-        :type **kwargs: dict
+        Args:
+            template_alias (str): the name of the template key for extracting text from conifg.
+
+        Keyword Args:
+            **kwargs: passing additional parameters for message assembly.
+
+        Returns:
+            str: the text of the message assembled from the template.
+            None: if the template is not found in the configuration file.
+
+        Examples:
+            >>> from messages import Messages
+            >>> messages = Messages('configs/messages.json')
+            >>> messages.render_template('test_message', username='pytest')
         """
         try:
             template = self.data['templates'][template_alias]
@@ -60,27 +81,32 @@ class Messages:
         except KeyError:
             return None
 
-
     def render_progressbar(
         self,
         total_count: int = 0,
         current_count: int = 0
-    ):
+    ) -> str | None:
         """
         A Method for generating string with a progress bar based
         on the transmitted statistics data.
 
-        :param total_count: An integer with the total counter value for the progress bar.
-        :type total_count: int
-        :default total_count: 0
-        :param current_count: Counter of the current integer
-            to calculate the percentage of self.total_count.
-        :type current_count: int
-        :default current_count: 0
+        Args:
+            total_count (int): an integer with the total counter value for the progress bar.
+                Defaults to 0.
+            current_count (int): counter of the current integer to calculate the percentage of total_count.
+                Defaults to 0.
+        Returns:
+            str: string with a progress bar.
+            None: if the total_count is 0.
+
+        Examples:
+            >>> from messages import Messages
+            >>> messages = Messages('configs/messages.json')
+            >>> messages.render_progressbar(100, 19)
         """
-        procentage = math.ceil((current_count / total_count) * 100)
+        percentage = math.ceil((current_count / total_count) * 100)
         progressbar = (
-            f"\r[{emoji.emojize(':black_medium-small_square:') * int(procentage)}"
-            f"{emoji.emojize(':white_medium_square:') * int((100 - procentage))}]{str(procentage)}%"
+            f"\r[{emoji.emojize(':black_medium-small_square:') * int(percentage)}"
+            f"{emoji.emojize(':white_medium_square:') * int((100 - percentage))}]{str(percentage)}%"
         )
         return progressbar

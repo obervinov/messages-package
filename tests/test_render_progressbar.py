@@ -11,14 +11,10 @@ TARGET_RESULT = (
     "◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️]19%"
 )
 
+
 def test_render_progressbar():
     """
     Functions for approving the result between TARGET_RESULT and the response from the module.
     """
     response = messages.render_progressbar(100, 19)
     assert response == TARGET_RESULT
-
-
-if __name__ == "__main__":
-    test_render_progressbar()
-    print("Rendering progressbar - passed")
