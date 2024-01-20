@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## v1.0.1 - 2024-01-19
+## v1.0.1 - 2024-01-20
 ### What's Changed
 **full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.0...v1.0.1 by @ obervinov https://github.com/obervinov/messages-package/pull/17
 #### 🐛 Bug Fixes
