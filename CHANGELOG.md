@@ -5,7 +5,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## v1.0.2 - 2024-01-24
 ### What's Changed
-**full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.1...v1.0.2 by @ obervinov https://github.com/obervinov/messages-package/pull/1
+**full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.1...v1.0.2 by @ obervinov https://github.com/obervinov/messages-package/pull/19
 #### 🐛 Bug Fixes
 * fixed import of main code via `__init__.py`
 
