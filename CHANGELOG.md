@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## v1.0.3 - 2024-01-29
 ### What's Changed
 **full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.2...v1.0.3 by @ obervinov https://github.com/obervinov/messages-package/pull/21
-#### 🐛 Bug Fixes
+#### 📚 Documentation
 * [Fix typos in README.md](https://github.com/obervinov/messages-package/issues/20)
 
 
