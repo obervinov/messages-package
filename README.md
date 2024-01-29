@@ -26,7 +26,7 @@ This package helps to easily and quickly generate beautiful messages for telegra
 ## <img src="https://github.com/obervinov/_templates/blob/v1.0.5/icons/build.png" width="25" title="build"> Environment variables
 | Variable  | Description | Default value |
 | ------------- | ------------- | ------------- |
-| `MESSAGES_CONFIG` | Json file with templates for rendering messages. (Example)[tests/configs/messages.json] | `configs/messages.json` |
+| `MESSAGES_CONFIG` | Json file with templates for rendering messages. [Example](tests/configs/messages.json) | `configs/messages.json` |
 
 
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/stack2.png" width="20" title="install"> Installing with Poetry
@@ -38,7 +38,7 @@ version = "1.0.0"
 
 [tool.poetry.dependencies]
 python = "^3.10"
-messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v1.0.1" }
+messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v1.0.3" }
 
 [build-system]
 requires = ["poetry-core"]
@@ -54,7 +54,14 @@ poetry install
    - all emojis should be wrapped in `:`
    - all variables must be specified in the same form as in your code
 ```json
-{ "templates": {"hello_message": {"text": "Hi, <b>{0}</b>! {1}\nAccess for your account - allowed {2}", "args": ["username", ":raised_hand:", ":unlocked:"]}}}
+{
+    "templates": {
+        "hello_message": {
+            "text": "Hi, <b>{0}</b>! {1}\nAccess for your account - allowed {2}",
+            "args": ["username", ":raised_hand:", ":unlocked:"]
+        }
+    }
+}
 ```
 
 ```python
@@ -84,7 +91,14 @@ Access for your account - allowed 🔓
    - all emojis should be wrapped in `:`
    - all variables must be specified in the same form as in your code
 ```json
-{"templates": {"progressbar_message": {"text": "{0} Messages from the queue have already been processed", "args": [":framed_picture:", "progressbar"]}}
+{
+    "templates": {
+        "queue_message": {
+            "text": "{0} Messages from the queue have already been processed\n{1}",
+            "args": [":framed_picture:", "progressbar"]
+        }
+    }
+}
 ```
 
 ```python
@@ -94,16 +108,20 @@ from messages import Messages
 # Create instance
 messages = Messages()
 
-# Rendering and getting messages
+# Render and get messages with progress bar
 print(
-    messages.render_progressbar(
-        total_count=100,
-        current_count=19
+    messages.render_template(
+        template_alias='queue_message',
+        progressbar=messages.render_progressbar(
+            total_count=100,
+            current_count=19
+        )
     )
 )
 ```
 
 _output result_
 ```python
-[◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◾◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️]19%🔓
+🏞 Messages from the queue have already been processed
+[◾◾◾◾◾◾◾◾◾◾◾◾◾◾◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻◻◻◻]19%
 ```

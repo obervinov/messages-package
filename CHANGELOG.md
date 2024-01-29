@@ -3,6 +3,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v1.0.3 - 2024-01-29
+### What's Changed
+**full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.2...v1.0.3 by @ obervinov https://github.com/obervinov/messages-package/pull/21
+#### 📚 Documentation
+* [Fix typos in README.md](https://github.com/obervinov/messages-package/issues/20)
+
+
 ## v1.0.2 - 2024-01-24
 ### What's Changed
 **full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.1...v1.0.2 by @ obervinov https://github.com/obervinov/messages-package/pull/19
