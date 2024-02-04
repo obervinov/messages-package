@@ -39,9 +39,19 @@ class Messages:
         else:
             self.config_path = 'configs/messages.json'
 
-        with open(self.config_path, 'r', encoding='UTF-8') as config_json:
-            self.data = json.load(config_json)
-        config_json.close()
+        if os.path.exists(self.config_path):
+            with open(self.config_path, 'r', encoding='UTF-8') as config_json:
+                try:
+                    self.data = json.load(config_json)
+                    config_json.close()
+                except json.JSONDecodeError as json_error:
+                    # pylint: disable=no-value-for-parameter
+                    raise json.JSONDecodeError(
+                        f"Configuration file {self.config_path} is not valid JSON: {json_error}\n"
+                        "https://github.com/obervinov/messages-package?tab=readme-ov-file#-usage-examples"
+                    )
+        else:
+            raise FileNotFoundError(f"Configuration file not found: {self.config_path}")
 
     def render_template(
         self,
@@ -79,6 +89,7 @@ class Messages:
             # Building full message
             return template['text'].format(*arguments)
         except KeyError:
+            print(f"[Messages]: template not found: {template_alias}")
             return None
 
     def render_progressbar(
