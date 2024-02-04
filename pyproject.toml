@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "messages"
-version = "1.0.3"
+version = "1.0.4"
 description = "This package helps to easily and quickly generate beautiful messages for telegram bots using templates described in json."
 authors = ["Bervinov Oleg <obervinov@pm.me>"]
 maintainers = ["Bervinov Oleg <obervinov@pm.me>"]
@@ -17,7 +17,7 @@ include = ["CHANGELOG.md"]
 "Bug Tracker" = "https://github.com/obervinov/messages-package/issues"
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.9 || ^3.10 || ^3.11"
 emoji  = "^2"
 
 [build-system]
