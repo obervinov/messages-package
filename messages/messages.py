@@ -6,8 +6,8 @@ import os
 import json
 import math
 import re
-import emoji
 from typing import Union
+import emoji
 
 
 class Messages:
