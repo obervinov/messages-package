@@ -7,6 +7,7 @@ import json
 import math
 import re
 import emoji
+from typing import Union
 
 
 class Messages:
@@ -57,7 +58,7 @@ class Messages:
         self,
         template_alias: str = None,
         **kwargs
-    ) -> str | None:
+    ) -> Union[str, None]:
         """
         Method for reading the text from the configuration file.
 
@@ -96,7 +97,7 @@ class Messages:
         self,
         total_count: int = 0,
         current_count: int = 0
-    ) -> str | None:
+    ) -> Union[str, None]:
         """
         A Method for generating string with a progress bar based
         on the transmitted statistics data.
