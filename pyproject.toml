@@ -17,7 +17,7 @@ include = ["CHANGELOG.md"]
 "Bug Tracker" = "https://github.com/obervinov/messages-package/issues"
 
 [tool.poetry.dependencies]
-python = "^3.9 || ^3.10 || ^3.11"
+python = "^3.12"
 emoji  = "^2"
 
 [build-system]
