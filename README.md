@@ -12,10 +12,6 @@
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/book.png" width="25" title="about"> About this project
 This package helps to easily and quickly generate beautiful messages for telegram bots using templates described in json.
 
-## <img src="https://github.com/obervinov/_templates/blob/main/icons/github-actions.png" width="25" title="github-actions"> GitHub Actions
-| Name  | Version |
-| ------------------------ | ----------- |
-| GitHub Actions Templates | [v1.0.12](https://github.com/obervinov/_templates/tree/v1.0.12) |
 
 
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/requirements.png" width="25" title="functions"> Supported functions
@@ -37,8 +33,8 @@ name = myproject"
 version = "1.0.0"
 
 [tool.poetry.dependencies]
-python = "^3.10"
-messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v1.0.3" }
+python = "^3.12"
+messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v2.0.0" }
 
 [build-system]
 requires = ["poetry-core"]
@@ -125,3 +121,8 @@ _output result_
 🏞 Messages from the queue have already been processed
 [◾◾◾◾◾◾◾◾◾◾◾◾◾◾◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️◻️]19%
 ```
+
+## <img src="https://github.com/obervinov/_templates/blob/main/icons/github-actions.png" width="25" title="github-actions"> GitHub Actions
+| Name  | Version |
+| ------------------------ | ----------- |
+| GitHub Actions Templates | [v2.0.0](https://github.com/obervinov/_templates/tree/v2.0.0) |

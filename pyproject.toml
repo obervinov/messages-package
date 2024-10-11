@@ -1,16 +1,16 @@
 [tool.poetry]
 name = "messages"
-version = "1.0.4"
+version = "2.0.0"
 description = "This package helps to easily and quickly generate beautiful messages for telegram bots using templates described in json."
-authors = ["Bervinov Oleg <obervinov@pm.me>"]
-maintainers = ["Bervinov Oleg <obervinov@pm.me>"]
+authors = ["Bervinov Oleg <bervinov.ob@gmail.com>"]
+maintainers = ["Bervinov Oleg <bervinov.ob@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "messages"}]
 homepage = "https://github.com/obervinov/messages-package"
 repository = "https://github.com/obervinov/messages-package"
 documentation = "https://github.com/obervinov/messages-package/blob/main/README.md"
-keywords = ["messages", "messages-bot", "messages-telebot", "messages-telegram-bot"]
+keywords = ["messages", "messages-bot", "messages-telebot", "messages-telegram-bot", "message-rendering", "message-templates", "message-templating"] 
 include = ["CHANGELOG.md"]
 
 [tool.poetry.urls]
