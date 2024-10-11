@@ -126,7 +126,9 @@ class Messages:
             return template['text'].format(*arguments)
         except KeyError as error:
             print(f"[Messages]: template not found: {template_alias}")
-            raise TemplateNotFound("Template not found in the configuration file. Please check your configuration file.") from error
+            raise TemplateNotFound(
+                "Template not found in the configuration file. Please check your configuration file."
+            ) from error
 
     def render_progressbar(
         self,
