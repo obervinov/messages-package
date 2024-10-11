@@ -43,7 +43,7 @@ class Messages:
 
         if not self._templates_is_valid():
             raise TemplatesIsNotValid(
-                "Templates have invalid elements. Please check your configuration file."
+                "Templates have invalid elements. Please check your configuration file. "
                 "Otherwise, check examples: https://github.com/obervinov/messages-package?tab=readme-ov-file#-usage-examples"
             )
 
@@ -79,13 +79,15 @@ class Messages:
         if 'templates' in self.configuration:
             for template in self.configuration['templates'].values():
                 if 'text' not in template or 'args' not in template.values():
+                    print(f"[Messages]: there are no text or args in template {template}")
                     return False
                 if not isinstance(template['text'], str) or not isinstance(template['args'], list):
+                    print(f"[Messages]: text or args in template {template} has an invalid data type")
                     return False
-
                 args_provided = len(template['args'])
                 args_expected = len(re.findall(r"{.*?}", template['text']))
                 if args_provided != args_expected:
+                    print(f"[Messages]: the number of arguments in the template {template} does nots match")
                     return False
         return True
 
