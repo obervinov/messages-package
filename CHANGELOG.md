@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v2.0.0 - 2024-10-11
+### What's Changed
+**full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.4..v2.0.0 by @ obervinov https://github.com/obervinov/messages-package/pull/27
+#### 💥 Breaking Changes
+* Bump python version to `3.12`
+#### 📚 Bug Fixes
+* [Fix invalid default path to messages.json ](https://github.com/obervinov/messages-package/issues/25)
+#### 🚀 Features
+* Bump workflows to `v2.0.0`
+* [Add additional exceptions for more informative errors](https://github.com/obervinov/messages-package/issues/26)
+
+
 ## v1.0.4 - 2024-02-04
 ### What's Changed
 **full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.3...v1.0.4 by @ obervinov https://github.com/obervinov/messages-package/pull/24

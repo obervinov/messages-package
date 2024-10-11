@@ -1,24 +1,29 @@
 [tool.poetry]
 name = "messages"
-version = "1.0.4"
+version = "2.0.0"
 description = "This package helps to easily and quickly generate beautiful messages for telegram bots using templates described in json."
-authors = ["Bervinov Oleg <obervinov@pm.me>"]
-maintainers = ["Bervinov Oleg <obervinov@pm.me>"]
+authors = ["Bervinov Oleg <bervinov.ob@gmail.com>"]
+maintainers = ["Bervinov Oleg <bervinov.ob@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [{include = "messages"}]
 homepage = "https://github.com/obervinov/messages-package"
 repository = "https://github.com/obervinov/messages-package"
 documentation = "https://github.com/obervinov/messages-package/blob/main/README.md"
-keywords = ["messages", "messages-bot", "messages-telebot", "messages-telegram-bot"]
+keywords = ["messages", "messages-bot", "messages-telebot", "messages-telegram-bot", "message-rendering", "message-templates", "message-templating"] 
 include = ["CHANGELOG.md"]
 
 [tool.poetry.urls]
 "Bug Tracker" = "https://github.com/obervinov/messages-package/issues"
 
 [tool.poetry.dependencies]
-python = "^3.9 || ^3.10 || ^3.11"
+python = "^3.12"
 emoji  = "^2"
+
+[tool.poetry.group.dev.dependencies]
+pylint = "^3.3.1"
+flake8 = "^7.1.1"
+pytest = "^8.3.3"
 
 [build-system]
 requires = ["poetry-core"]
