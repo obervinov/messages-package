@@ -78,7 +78,7 @@ class Messages:
         """
         if 'templates' in self.configuration:
             for template in self.configuration['templates'].values():
-                if 'text' not in template or 'args' not in template.values():
+                if 'text' not in template or 'args' not in template:
                     print(f"[Messages]: there are no text or args in template {template}")
                     return False
                 if not isinstance(template['text'], str) or not isinstance(template['args'], list):
