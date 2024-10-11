@@ -4,11 +4,11 @@ No need to add anything here. Feel free to delete this line when you make your o
 Leave it empty
 """
 from .messages import Messages
-from .exceptions import ConfigurationIsNotValid, TemplateNotFound, TemplateIsNotValid
+from .exceptions import ConfigurationIsNotValid, TemplateNotFound, TemplatesIsNotValid
 
 __all__ = [
     'Messages',
     'ConfigurationIsNotValid',
     'TemplateNotFound',
-    'TemplateIsNotValid'
+    'TemplatesIsNotValid'
 ]
