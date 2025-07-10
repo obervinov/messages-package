@@ -34,7 +34,7 @@ version = "1.0.0"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v2.0.0" }
+messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v2.0.1" }
 
 [build-system]
 requires = ["poetry-core"]
@@ -125,4 +125,4 @@ _output result_
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/github-actions.png" width="25" title="github-actions"> GitHub Actions
 | Name  | Version |
 | ------------------------ | ----------- |
-| GitHub Actions Templates | [v2.0.0](https://github.com/obervinov/_templates/tree/v2.0.0) |
+| GitHub Actions Templates | [v2.1.1](https://github.com/obervinov/_templates/tree/v2.1.) |

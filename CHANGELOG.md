@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v2.0.1 - 2025-07-10
+### What's Changed
+**full changelog**: https://github.com/obervinov/messages-package/compare/v2.0.0..v2.0.1 by @ obervinov https://github.com/obervinov/messages-package/pull/28
+#### 🚀 Features
+* Bump workflows to `v2.1.1`
+* Bump dependencies to latest versions
+
+
 ## v2.0.0 - 2024-10-11
 ### What's Changed
 **full changelog**: https://github.com/obervinov/messages-package/compare/v1.0.4..v2.0.0 by @ obervinov https://github.com/obervinov/messages-package/pull/27
