@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
+## v2.0.2 - 2025-12-23
+### What's Changed
+**full changelog**: https://github.com/obervinov/messages-package/compare/v2.0.1..v2.0.2 by @obervinov https://github.com/obervinov/messages-package/pull/32
+#### 🚀 Features
+* upgrade dependencies to latest versions
+* fix codeql warnings
+
+
 ## v2.0.1 - 2025-07-10
 ### What's Changed
 **full changelog**: https://github.com/obervinov/messages-package/compare/v2.0.0..v2.0.1 by @obervinov https://github.com/obervinov/messages-package/pull/28
