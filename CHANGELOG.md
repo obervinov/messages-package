@@ -7,6 +7,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ### What's Changed
 #### 🐛 Bug Fixes
 * `.github/workflows`: move the reusable workflows to `obervinov/_templates@v4.0.0`. Node 20 is removed from the Actions runner on 2026-09-23, and the pinned templates still called `actions/create-release` (`runs.using: node12`, archived) along with a set of `node20` actions — releases and checks in this repository would stop running.
+#### 📚 Documentation
+* `README.md`: fix the unbalanced quote that made the pasted `pyproject.toml` invalid, and unpin the last icon still on `_templates@v1.0.5`.
 
 
 ## v2.0.2 - 2025-12-23
