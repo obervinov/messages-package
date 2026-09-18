@@ -3,12 +3,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
-## v2.0.3 - 2026-09-17
+## v2.0.3 - 2026-09-18
 ### What's Changed
 #### 🐛 Bug Fixes
 * `.github/workflows`: move the reusable workflows to `obervinov/_templates@v4.0.0`. Node 20 is removed from the Actions runner on 2026-09-23, and the pinned templates still called `actions/create-release` (`runs.using: node12`, archived) along with a set of `node20` actions — releases and checks in this repository would stop running.
 #### 📚 Documentation
 * `README.md`: fix the unbalanced quote that made the pasted `pyproject.toml` invalid, and unpin the last icon still on `_templates@v1.0.5`.
+* `README.md`: replace the hand-maintained GitHub Actions Templates table with a badge that reads the pinned version out of `.github/workflows/pr.yaml` — the table went stale on every template bump because nothing kept it in sync.
 
 
 ## v2.0.2 - 2025-12-23
