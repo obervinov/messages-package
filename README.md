@@ -19,7 +19,7 @@ This package helps to easily and quickly generate beautiful messages for telegra
 - Rendering a line with emoji
 - Rendering a simple string
 
-## <img src="https://github.com/obervinov/_templates/blob/v1.0.5/icons/build.png" width="25" title="build"> Environment variables
+## <img src="https://github.com/obervinov/_templates/blob/main/icons/build.png" width="25" title="build"> Environment variables
 | Variable  | Description | Default value |
 | ------------- | ------------- | ------------- |
 | `MESSAGES_CONFIG` | Json file with templates for rendering messages. [Example](tests/configs/messages.json) | `configs/messages.json` |
@@ -29,12 +29,12 @@ This package helps to easily and quickly generate beautiful messages for telegra
 ```bash
 tee -a pyproject.toml <<EOF
 [tool.poetry]
-name = myproject"
+name = "myproject"
 version = "1.0.0"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v2.0.1" }
+messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v2.0.3" }
 
 [build-system]
 requires = ["poetry-core"]
@@ -123,6 +123,4 @@ _output result_
 ```
 
 ## <img src="https://github.com/obervinov/_templates/blob/main/icons/github-actions.png" width="25" title="github-actions"> GitHub Actions
-| Name  | Version |
-| ------------------------ | ----------- |
-| GitHub Actions Templates | [v2.1.1](https://github.com/obervinov/_templates/tree/v2.1.1) |
+[![GitHub Actions Templates](https://img.shields.io/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2Fobervinov%2Fmessages-package%2FHEAD%2F.github%2Fworkflows%2Fpr.yaml&search=pr.yaml%40%28v%5B0-9.%5D%2B%29&replace=%241&label=_templates&color=blue&logo=githubactions&logoColor=white)](https://github.com/obervinov/_templates)
