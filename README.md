@@ -34,7 +34,7 @@ version = "1.0.0"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v2.0.3" }
+messages = { git = "https://github.com/obervinov/messages-package.git", tag = "v2" }
 
 [build-system]
 requires = ["poetry-core"]
